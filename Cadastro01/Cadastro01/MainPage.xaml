@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Cadastro01.MainPage"
+             BackgroundColor="BlueViolet">
+
+    <StackLayout BackgroundColor="white" Margin="20" Padding="0.5">
+        
+        <Label Text="Cadastro" FontSize="30" FontAttributes="Bold"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+         <TableView Intent="Form">
+            <TableRoot>
+                <TableSection >
+                    <EntryCell Label="Nome " x:Name="TxtNome" 
+                               Keyboard="Text"
+                               Placeholder="Digite  Nome"/>
+                    <EntryCell x:Name="TxtEmail"
+                           Label="Email" 
+                           Placeholder="Digite e-mail" 
+                           Keyboard="Email"/>
+                    <SwitchCell x:Name="SwitchCelular"
+                            Text="Enviar contato?"
+                            OnChanged="swt"
+                            On="False"/>
+                    <EntryCell x:Name="TxtCelular"
+                           Label="Celular" IsEnabled="False"
+                           Placeholder="xx 9xxxx-xxxx" 
+                           Keyboard="Telephone"/>
+                    <ViewCell>
+                        <Picker x:Name="pck1" Title="Profissão">
+                            <Picker.Items>
+                                <x:String>Professor</x:String>
+                                <x:String>Advogado</x:String>
+                                <x:String>Médico</x:String>
+                                <x:String>Secretaria</x:String>
+                                <x:String>Motorista</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>             
+        </TableView>
+        <Button Text="Enviar" Clicked="Button_Clicked" HorizontalOptions="Center" />
+        <Label Text="Dados Recebidos: " x:Name="lbNome" 
+               FontSize="20" FontAttributes="Bold" 
+               BackgroundColor="Beige" />
+        
+    </StackLayout>
+
+</ContentPage>
